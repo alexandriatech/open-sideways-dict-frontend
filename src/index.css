@@ -1,0 +1,32 @@
+:root {
+  --rgb-white: 255, 255, 255;
+  --white: white;
+  /* --our-blue: #2528ff; */
+  --rgb-our-blue: 97, 104, 219;
+  --our-blue: rgb(var(--rgb-our-blue));
+  --rgb-our-red: 255, 0, 0;
+  --our-red: rgb(var(--rgb-our-red));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+.pageContainer {
+  margin: auto;
+  max-width: 500px;
+  padding: 10px;
+  text-align: center;
+}

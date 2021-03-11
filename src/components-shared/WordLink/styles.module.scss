@@ -1,0 +1,34 @@
+.transparent {
+  opacity: 0.3;
+  transition: opacity 200ms;
+}
+
+// highlight is only activated if the whole search is found in a group
+.highlighted {
+  opacity: 0.3;
+  transition: opacity 200ms;
+}
+.activate .highlighted,
+.highlightedConsecutive {
+  opacity: 0.65;
+}
+
+// this resets the highlight if the word does not completely match the input
+// like input oooo and word dog
+.noWordFound .highlighted {
+  opacity: 0.3;
+}
+
+.hide {
+  display: none;
+}
+
+.link {
+  text-decoration: none;
+  font-size: inherit;
+  &:hover .transparent,
+  &:hover .highlighted,
+  &:hover .highlightedConsecutive {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,63 @@
+@import "mixins.scss";
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  .wordListGradientTop {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -5;
+  }
+  .title {
+    font-size: 1.04rem;
+    font-weight: 500;
+  }
+
+  .link {
+    margin-left: 15px;
+  }
+}
+
+:global(.default) .header {
+  .wordListGradientTop {
+    background: var(--white);
+    background: linear-gradient(
+      180deg,
+      var(--white) 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+:global(.alt) .header {
+  background-color: rgba(var(--rgb-our-blue), 0.7);
+}
+
+.headerSpace {
+  height: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+@include medium-devices {
+  .header {
+    padding: 20px;
+    .link {
+      margin-left: 25px;
+    }
+  }
+
+  .headerSpace {
+    height: 60px;
+  }
+}

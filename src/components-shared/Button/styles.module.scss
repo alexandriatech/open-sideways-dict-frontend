@@ -1,0 +1,42 @@
+.button {
+  -webkit-appearance: none;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  min-width: 135px;
+  padding: 7px 10px;
+  text-decoration: none;
+  transition: 250ms ease-out;
+}
+
+.default {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--our-blue);
+  &:hover {
+    background-color: var(--our-blue);
+    color: var(--white);
+  }
+}
+
+.alt {
+  background-color: var(--our-blue);
+  border-color: var(--our-blue);
+  color: var(--white);
+  &:hover {
+    background-color: var(--white);
+    color: var(--our-blue);
+  }
+}
+
+.round {
+  align-items: center;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+}

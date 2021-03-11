@@ -1,0 +1,17 @@
+.wordPage {
+  text-align: center;
+}
+
+.box {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.shareButton {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

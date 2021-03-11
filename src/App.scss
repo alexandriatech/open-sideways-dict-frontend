@@ -1,0 +1,41 @@
+.theme-wrapper {
+  min-height: 100vh;
+  transition: 250ms;
+
+  // defaults for themes
+  // we should try to set defaults to some tags
+  // and if it's different for each component then just simply override them
+  &.default {
+    color: black;
+  }
+
+  &.alt {
+    background-color: var(--our-blue);
+    color: var(--white);
+  }
+}
+
+// globa page transitions for now...
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  /* position: absolute; */
+  /* top: 0; */
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
