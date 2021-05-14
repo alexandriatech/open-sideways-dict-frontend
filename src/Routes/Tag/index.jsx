@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import WordList from "components-app/WordList";
 import GradientBottom from "components-shared/GradientBottom";
+import Loader from "components-shared/Loader"
 import {
   TAG_NOT_DOUND,
   TAG_NO_ENTRIES,
@@ -41,8 +42,7 @@ const Tag = ({ className }) => {
   });
   const _className = classNames(className, styles.tagPage, "pageContainer");
 
-  //   TODO: implement
-  if (loading) return null;
+  if (loading) return <Loader/>;
   if (error) return `Error! ${error}`;
   let noWordsText;
   let wordList;

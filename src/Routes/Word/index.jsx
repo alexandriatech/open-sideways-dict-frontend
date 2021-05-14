@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import WordList from "components-app/WordList";
 import GradientBottom from "components-shared/GradientBottom";
+import Loader from "components-shared/Loader"
 import {
   ENTRIES_FOUND,
   NO_ENTRIES_TEXT,
@@ -45,7 +46,7 @@ const Word = ({ className }) => {
   const _className = classNames(className, styles.wordPage, "pageContainer");
 
   //   TODO: implement
-  if (loading) return null;
+  if (loading) return <Loader/>;
   if (error) return QUERY_ERROR`${error}`;
   let noWordsText;
   let wordList;

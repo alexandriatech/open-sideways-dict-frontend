@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import Input from "components-shared/Input";
+import Loader from "components-shared/Loader"
 import Button from "components-shared/Button";
 import { Redirect } from "react-router-dom";
 
@@ -28,9 +29,8 @@ const AddWord = ({ className }) => {
 
   const _className = classNames(className, styles.addWord, "pageContainer");
 
-  //   (josue: TODO) loading state
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <Loader/>;
+  if (error) return <p>Error :( <br/> {error}</p>;
   if (data) return <Redirect to={`/word/${wordValue.value.toLowerCase()}`} />;
 
   const onSubmit = (e) => {

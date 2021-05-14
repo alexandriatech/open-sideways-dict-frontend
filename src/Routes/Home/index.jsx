@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 import WordLink from "components-shared/WordLink";
 import TextInput from "components-shared/TextInput";
 import Icon from "components-shared/Icon";
+import Loader from "components-shared/Loader"
 import SearchIcon from "assets/search.svg"
 import GradientBottom from "components-shared/GradientBottom";
 import { Link } from "react-router-dom";;
@@ -26,8 +27,7 @@ const Home = ({ className, user }) => {
   const { loading, error, data } = useQuery(GET_ALL_WORDS);
   const _className = classNames(className, styles.homePage, "pageContainer");
 
-  // TODO: handle loading
-  if (loading) return "";
+  if (loading) return <Loader/>;
   // TODO: handle errors
   if (error) return `Error! ${error.message}`;
 
