@@ -1,0 +1,40 @@
+.loaderWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // background-color: rgba(0, 0, 0, 1);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  &.active {
+    display: flex;
+  }
+  .loader {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    border-top: 7px solid var(--our-blue);
+    border-bottom: 7px solid var(--our-blue);
+    border-left: 7px solid rgb(218, 218, 218);
+    border-right: 7px solid rgb(218, 218, 218);
+    animation: spin 1s linear infinite;
+    &.inverse {
+      border-left-color: rgb(54, 74, 100);
+      border-right-color: rgb(54, 74, 100);
+      border-bottom-color: rgba(255, 255, 255, 0.7);
+      border-top-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

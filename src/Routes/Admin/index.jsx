@@ -7,6 +7,7 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 import WordTab from './WordTab';
 import UserTab from './UserTab';
+import Loader from "components-shared/Loader"
 
 const GET_UNPUBLISHED_WORDS = gql`
   query {
@@ -30,7 +31,7 @@ function Admin() {
     fetchPolicy: "network-only",
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>My bad... but {error}</p>;
 
   const { allWords = [], getAllUsers = [] } = data;

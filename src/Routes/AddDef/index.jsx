@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import Button from "components-shared/Button";
 import Heading from "components-shared/Heading";
 import Input from "components-shared/Input";
+import Loader from "components-shared/Loader"
 import InputTag from "components-shared/InputTag";
 import { Redirect } from "react-router-dom";
 
@@ -44,8 +45,7 @@ const AddDef = ({ className }) => {
   ] = useMutation(ADD_DEF_WORD);
   const _className = classNames(className, styles.addDefPage, "pageContainer");
 
-  //   TODO: implement
-  if (loading || addDefMutationLoading) return null;
+  if (loading || addDefMutationLoading) return <Loader/>;
   if (error || addDefMutationError) return `Error! ${error}`;
   // let noWordsText;
   let renderMain;

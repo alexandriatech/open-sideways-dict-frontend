@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import WordList from "components-app/WordList";
 import GradientBottom from "components-shared/GradientBottom";
+import Loader from "components-shared/Loader"
 import {
   USER_ENTRIES_FOUND,
   USER_NO_ENTRIES,
@@ -38,8 +39,7 @@ const UserWords = ({ className }) => {
   });
   const _className = classNames(className, styles.userPage, "pageContainer");
 
-  //   TODO: implement
-  if (loading) return null;
+  if (loading) return <Loader />;
   if (error) return `Error! ${error}`;
 
   let noWordsText;

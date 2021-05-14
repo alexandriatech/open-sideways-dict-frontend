@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import Heading from "components-shared/Heading";
 import Button from "components-shared/Button";
+import Loader from "components-shared/Loader"
 import { SHARE_TITLE } from "constants/index";
 
 const GET_WORD_DATA = gql`
@@ -38,8 +39,7 @@ const Share = ({ className }) => {
   const _className = classNames(className, styles.wordPage, "pageContainer");
   let rendered, shareButtons;
 
-  //   TODO: implement
-  if (loading) return null;
+  if (loading) return <Loader/>;
   if (error) rendered = `${error}`;
   else {
     const { getWordDef } = data;
